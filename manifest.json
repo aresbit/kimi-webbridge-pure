@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Browser Bridge (Local Agent)",
+  "description": "Local-only browser control bridge. No account, no login, no cloud telemetry.",
+  "version": "2.0.27",
+  "icons": {
+    "16": "icon/16.png",
+    "32": "icon/32.png",
+    "48": "icon/48.png",
+    "128": "icon/128.png"
+  },
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "debugger",
+    "storage",
+    "alarms",
+    "tabGroups",
+    "windows",
+    "favicon",
+    "webNavigation",
+    "webRequest",
+    "scripting",
+    "unlimitedStorage"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Browser Bridge (local daemon at 127.0.0.1:10086)"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; connect-src 'self' ws://127.0.0.1:* http://127.0.0.1:*"
+  },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnzMRxFjdhEnk03bSz6Qr1Z8HUz2XCjBy2r4bUuIv0JVdPLs3jO2VcoGW1Z5TufRtwPSqVxRnD4Zj1VXWOo6mHo0Z9gB0a6SxUgE4Ng5ajCKlb/Yl46H2X7wNjzNDWRckGaKRtrXCkuvepuvlQCd8Onqzxm2YFwehLEJV4nWBzCX5bThLszkE1gMlSjtHvR4Z9f6j/akwrOfDQI8dYfVe2a5mliD58z2564SKHFV6kNNR6AZF5OWkAiLncn6iHhSq1IzaeewNBYQ5nq0l4ND6CcjI9zpYOkwvAvy3IdpVtIzcGe+oxOUIUkcrGLLalraYGLzxVOOwtbj1/n07ZNGKRQIDAQAB"
+}
